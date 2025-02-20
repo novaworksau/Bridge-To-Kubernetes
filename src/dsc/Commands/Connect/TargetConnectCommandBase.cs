@@ -139,6 +139,7 @@ namespace Microsoft.BridgeToKubernetes.Exe.Commands.Connect
             {
                 _targetKubeConfigContext = targetKubeConfigContextOption.Value();
             }
+
         }
 
         protected RemoteContainerConnectionDetails ResolveContainerConnectionDetails(string routingHeaderValue, IEnumerable<string> routingManagerFeatureFlags)

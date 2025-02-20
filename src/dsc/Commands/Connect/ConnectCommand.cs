@@ -222,6 +222,7 @@ Additional Arguments
                     _routingManagerFeatureFlags = routingManagerFeatureFlagsOption.Values;
                 }
 
+
                 this._useKubernetesServiceEnvironmentVariables = useKubernetesServiceEnvironmentVariablesOption.HasValue();
                 this._yesFlag = yesOption.HasValue();
 

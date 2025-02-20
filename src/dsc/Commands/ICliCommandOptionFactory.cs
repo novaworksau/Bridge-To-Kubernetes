@@ -40,5 +40,6 @@ namespace Microsoft.BridgeToKubernetes.Exe.Commands
         CliCommandOption CreateYesOption();
 
         CliCommandOption CreateRoutingManagerFeatureFlagOption();
+        
     }
 }

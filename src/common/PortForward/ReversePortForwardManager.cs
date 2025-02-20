@@ -121,6 +121,25 @@ namespace Microsoft.BridgeToKubernetes.Common.PortForward
 
             private async Task OnDataReceived(int streamId, byte[] data)
             {
+                await OnDataReceivedWithRetry(streamId, data, 0);
+
+                //var tcpClient = _streams.GetOrAdd(streamId, (_) =>
+                //{
+                //    TcpClient t = new TcpClient();
+                //    t.Connect(new IPEndPoint(IPAddress.Loopback, _localPort));
+                //    Task.Run(() => this.StartReceivingAsync(t, streamId, _cancellationToken)).Forget();
+                //    return t;
+                //});
+
+                //if (tcpClient.Connected)
+                //{
+                //    await tcpClient.GetStream().WriteAsync(data, 0, data.Length);
+                //    _log.Verbose($"Sent {data.Length} bytes to workload on id {streamId}.");
+                //}
+            }
+
+            private async Task OnDataReceivedWithRetry(int streamId, byte[] data, int count)
+            {
                 var tcpClient = _streams.GetOrAdd(streamId, (_) =>
                 {
                     TcpClient t = new TcpClient();
@@ -134,7 +153,20 @@ namespace Microsoft.BridgeToKubernetes.Common.PortForward
                     await tcpClient.GetStream().WriteAsync(data, 0, data.Length);
                     _log.Verbose($"Sent {data.Length} bytes to workload on id {streamId}.");
                 }
+                else
+                {
+                    _log.Verbose($"TCP Client not connected on id {streamId}.");
+                    OnClosed(streamId);
+                    if(count < 1)
+                    {
+                        count++;
+                        await OnDataReceivedWithRetry(streamId, data, count);
+                    }
+
+
+                }
             }
+
 
             private void OnClosed(int streamId)
             {
