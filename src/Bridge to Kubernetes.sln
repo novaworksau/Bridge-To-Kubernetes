@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common", "common\common.csproj", "{C12A463D-F0C5-4118-9F16-C017B131F575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.Common", "common\Microsoft.BridgeToKubernetes.Common.csproj", "{C12A463D-F0C5-4118-9F16-C017B131F575}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common.tests", "common.tests\common.tests.csproj", "{713BA354-82CB-45C2-9EDD-ABC1DB6A8442}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devhostAgent", "devhostagent\devhostAgent.csproj", "{DBD45BA0-A89C-4C48-99F0-ADA9256EB041}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.DevHostAgent", "devhostagent\Microsoft.BridgeToKubernetes.DevHostAgent.csproj", "{DBD45BA0-A89C-4C48-99F0-ADA9256EB041}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devhostAgent.restorationjob", "devhostagent.restorationjob\devhostAgent.restorationjob.csproj", "{FAD78D00-5C48-4BCB-B3A5-4CD68CAD1D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.DevHostAgent.RestorationJob", "devhostagent.restorationjob\Microsoft.BridgeToKubernetes.DevHostAgent.RestorationJob.csproj", "{FAD78D00-5C48-4BCB-B3A5-4CD68CAD1D4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpointmanager", "endpointmanager\endpointmanager.csproj", "{CC50AC36-A5FE-4359-BEBF-02DBC78FEEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.EndpointManager", "endpointmanager\Microsoft.BridgeToKubernetes.EndpointManager.csproj", "{CC50AC36-A5FE-4359-BEBF-02DBC78FEEA5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpointmanager.tests", "endpointmanager.tests\endpointmanager.tests.csproj", "{12D605CD-E22C-4A2A-B81F-B220C585F167}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "library", "library\library.csproj", "{9252E3B4-1EBE-4E1E-A9B3-23EA58B7EAD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.Library", "library\Microsoft.BridgeToKubernetes.Library.csproj", "{9252E3B4-1EBE-4E1E-A9B3-23EA58B7EAD0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "library.tests", "library.tests\library.tests.csproj", "{47A0E6D3-E5A2-417F-A4E8-DDC6FCEBF69A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "routingmanager", "routingmanager\routingmanager.csproj", "{BA9C10CE-B18B-4148-8AD2-6734E8AA6D9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.RoutingManager", "routingmanager\Microsoft.BridgeToKubernetes.RoutingManager.csproj", "{BA9C10CE-B18B-4148-8AD2-6734E8AA6D9B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testhelpers", "testhelpers\testhelpers.csproj", "{56B171E9-6E52-4860-AA0B-27759A0FED63}"
 EndProject
@@ -29,17 +29,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devhostAgent.restorationjob
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "routingmanager.tests", "routingmanager.tests\routingmanager.tests.csproj", "{49DF73FE-1E7D-4AF6-87B5-194BF4A35ADB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpointmanagerlauncher", "EndpointManagerLauncher\endpointmanagerlauncher.csproj", "{B406D9B1-35B1-42CC-B39C-9E6E691EB99E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.EndpointManagerLauncher", "EndpointManagerLauncher\Microsoft.BridgeToKubernetes.EndpointManagerLauncher.csproj", "{B406D9B1-35B1-42CC-B39C-9E6E691EB99E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "localagent", "LocalAgent\LocalAgent.csproj", "{C3F0EE30-9187-43D8-B2C7-86CD61635561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.LocalAgent", "LocalAgent\Microsoft.BridgeToKubernetes.LocalAgent.csproj", "{C3F0EE30-9187-43D8-B2C7-86CD61635561}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dsc.tests", "dsc.tests\dsc.tests.csproj", "{C3753974-9857-4AF1-B06B-DD53F963108B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dsc", "dsc\dsc.csproj", "{32C5446A-CFB6-47CF-AB6A-17109CDA3C9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.BridgeToKubernetes.DSC", "dsc\Microsoft.BridgeToKubernetes.DSC.csproj", "{32C5446A-CFB6-47CF-AB6A-17109CDA3C9C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{74317FC8-6CD7-4155-BFBD-0EBFCD67F831}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
 Global

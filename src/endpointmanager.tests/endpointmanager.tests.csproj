@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>EndpointManager.tests</AssemblyName>
     <RootNamespace>Microsoft.BridgeToKubernetes.EndpointManager.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
@@ -17,19 +16,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extras.FakeItEasy" Version="7.0.0" />
-    <PackageReference Include="FakeItEasy" Version="8.1.0" />
-    <PackageReference Include="xunit" Version="2.7.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
+    <PackageReference Include="Autofac.Extras.FakeItEasy" />
+    <PackageReference Include="FakeItEasy" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />      
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />      
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\common\common.csproj" />
-    <ProjectReference Include="..\endpointmanager\endpointmanager.csproj" />
+    <ProjectReference Include="..\common\Microsoft.BridgeToKubernetes.Common.csproj" />
+    <ProjectReference Include="..\endpointmanager\Microsoft.BridgeToKubernetes.EndpointManager.csproj" />
     <ProjectReference Include="..\testhelpers\testhelpers.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
     <RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyName>Microsoft.BridgeToKubernetes.Library</AssemblyName>
@@ -40,15 +39,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\common\common.csproj" />
+    <ProjectReference Include="..\common\Microsoft.BridgeToKubernetes.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
-    <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="System.ServiceProcess.ServiceController" />
   </ItemGroup>
 
   <ItemGroup>

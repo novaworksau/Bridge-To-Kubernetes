@@ -1,26 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net7.0</TargetFrameworks>
-    <AssemblyName>Microsoft.BridgeToKubernetes.Common</AssemblyName>
-    <RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>Microsoft.BridgeToKubernetes.Common</RootNamespace>
-    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)..\..\build\FinalPublicKey.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
-    <DelaySign>true</DelaySign>
-    <TrimUnusedDependencies>true</TrimUnusedDependencies>
-    <HighEntropyVA>True</HighEntropyVA>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <DocumentationFile>bin\Microsoft.BridgeToKubernetes.Common.xml</DocumentationFile>
-    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <Authors>Microsoft</Authors>
-  </PropertyGroup>
+	<PropertyGroup>
+		<AssemblyName>Microsoft.BridgeToKubernetes.Common</AssemblyName>
+		<RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<RootNamespace>Microsoft.BridgeToKubernetes.Common</RootNamespace>
+		<AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)..\..\build\FinalPublicKey.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<DelaySign>true</DelaySign>
+		<TrimUnusedDependencies>true</TrimUnusedDependencies>
+		<HighEntropyVA>True</HighEntropyVA>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<DocumentationFile>bin\Microsoft.BridgeToKubernetes.Common.xml</DocumentationFile>
+		<Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+		<Authors>Microsoft</Authors>
+	</PropertyGroup>
 
-  <!--PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0|AnyCPU'">
+	<!--PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0|AnyCPU'">
     <CodeAnalysisRuleSet>..\mindaro.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
@@ -28,47 +27,47 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup-->
 
-  <!-- NOTE: This converts the TelemetryType environment variable defined in the build pipeline into the TELEMETRY_STAGING, TELEMETRY_PRODUCTION, TELEMETRY_DEVELOPMENT constants used in src\common\Constants.cs -->
-  <PropertyGroup>
-    <DefineConstants>$(DefineConstants);$(TelemetryType)</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
-    <NoWarn>8002</NoWarn>
-  </PropertyGroup>
-  
-  <ItemGroup>
-    <Compile Update="CommonResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CommonResources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Update="CommonResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<!-- NOTE: This converts the TelemetryType environment variable defined in the build pipeline into the TELEMETRY_STAGING, TELEMETRY_PRODUCTION, TELEMETRY_DEVELOPMENT constants used in src\common\Constants.cs -->
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);$(TelemetryType)</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+		<NoWarn>8002</NoWarn>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Autofac" Version="8.0.0" />
-    <PackageReference Include="KubernetesClient" Version="13.0.11" />
-    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.22.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="8.0.2" />
-    <PackageReference Include="Microsoft.Build.Runtime" Version="17.7.2">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
-    <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+	<ItemGroup>
+		<Compile Update="CommonResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CommonResources.resx</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="CommonResources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-    <PackageReference Include="SystemTextJsonPatch" Version="3.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Autofac" />
+		<PackageReference Include="KubernetesClient" />
+		<PackageReference Include="Microsoft.ApplicationInsights" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" />
+		<PackageReference Include="Microsoft.Build.Runtime">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.CommandLineUtils" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+		<PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 
-  <Import Project="$(MSBuildThisFileDirectory)\..\..\build\ClientAssemblyVersion.proj" />
-  <Import Project="$(MSBuildThisFileDirectory)\..\..\build\AssemblyVersion.proj" />
-  <Import Project="$(MSBuildThisFileDirectory)\..\..\build\localization.targets" />
+		<PackageReference Include="SystemTextJsonPatch"/>
+	</ItemGroup>
+
+	<Import Project="$(MSBuildThisFileDirectory)\..\..\build\ClientAssemblyVersion.proj" />
+	<Import Project="$(MSBuildThisFileDirectory)\..\..\build\AssemblyVersion.proj" />
+	<Import Project="$(MSBuildThisFileDirectory)\..\..\build\localization.targets" />
 </Project>

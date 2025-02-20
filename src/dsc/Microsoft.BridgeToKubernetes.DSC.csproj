@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
     <TieredCompilation>true</TieredCompilation>
     <RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
     <DebugType>portable</DebugType>
@@ -49,16 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\library\library.csproj" />
-    <ProjectReference Include="..\common\common.csproj" />
+    <ProjectReference Include="..\library\Microsoft.BridgeToKubernetes.Library.csproj" />
+    <ProjectReference Include="..\common\Microsoft.BridgeToKubernetes.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
 
   <PropertyGroup>
     <EndpointManagerRuntimeIdentifier>$(RuntimeIdentifier)</EndpointManagerRuntimeIdentifier>
@@ -124,9 +117,7 @@
   </Target>
 
   <ItemGroup>
-    <None Include="
-              $(MSBuildThisFileDirectory)..\..\NOTICE.txt;
-              $(MSBuildThisFileDirectory)..\..\LICENSE.txt">
+    <None Include="&#xD;&#xA;              $(MSBuildThisFileDirectory)..\..\NOTICE.txt;&#xD;&#xA;              $(MSBuildThisFileDirectory)..\..\LICENSE.txt">
       <CopyToPublishDirectory>Always</CopyToPublishDirectory>
     </None>
   </ItemGroup>
